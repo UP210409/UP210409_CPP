@@ -9,6 +9,10 @@
 #include <stdio.h>
 using namespace std;
 
+//Variables Globales
+#define PI 3.1416
+const float pi=3.1415;
+
 int main()
 {
     int entero = -2147483647;
@@ -21,6 +25,8 @@ int main()
     cout << "El tamaño del entero es: " << sizeof(entero) << " bytes" << endl;
     cout << "El caracter es: "<< caracter << endl;
     cout << "El tamaño del caracter es: " << sizeof(caracter) << " bytes." << endl;
+    cout << "El valor de pi es: " << pi << endl;
+    cout << "El valor de PI es: " << PI << endl;
     //getchar();
 
     return 0;
