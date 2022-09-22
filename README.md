@@ -2,6 +2,5 @@
 Crear Repositorio desde github
 **Delfina Deserti**
 *Viva Messi*
-![MESSI](https://cloudfront-us-east-1.images.arcpublishing.com/infobae/3KBPYEKSJRBWLAWCFD3TORICBM)
-![Desde la compu](messi.jpeg)
+![Desde la compu](/U1/Pics/messi.jpeg)
 
