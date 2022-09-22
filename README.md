@@ -2,4 +2,4 @@
 Crear Repositorio desde github
 **Delfina Deserti**
 *Viva Messi*
-![MESSI](/home/delfi/UP210409_CPP/messi.jpeg)
+![MESSI](https://cloudfront-us-east-1.images.arcpublishing.com/infobae/3KBPYEKSJRBWLAWCFD3TORICBM)
