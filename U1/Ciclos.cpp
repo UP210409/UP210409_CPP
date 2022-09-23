@@ -1,3 +1,10 @@
+/*
+    Unidad 1 - Ciclos
+    Autor: María Delfina Deserti
+    Fecha: 23/09/2022
+    Descripción: Suma pares e impares con if
+*/
+
 #include <iostream>
 using namespace std;
 
