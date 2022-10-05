@@ -2,7 +2,7 @@
 using namespace std;
 
 main(){
-	cout<< "Hola mundo help"<< end;
+	cout<< "Hola" << endl;
 	getchar();
 	return(0);
 }
