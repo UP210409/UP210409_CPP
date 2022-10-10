@@ -9,7 +9,6 @@
 * /Imagenes
 
 ---
-entrada, proceso , salida
 ## 01_Hola
 
 *This exercise show the word "Hello"*  
@@ -124,8 +123,61 @@ int main()
 ## 05_Edades
 
 *It shows a messagge depending on the age you input*  
-**Execution**
-![Ciclos](/U1/Imagenes/Ciclos.png "Ciclos")
+**Execution with all the possible options**
+![Ciclos](/U1/Imagenes/Edades.png "Ciclos")
 
 **Code**
+```
+/*
+    Unidad 1 - Edades
+    Autor: María Delfina Deserti
+    Fecha: 23/09/2022
+    Descripción: Muestra mensaje dependiendo la edad ingresada
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int e = 0;
+    cout << "Ingrese una edad" << endl;
+    cin >> e;
+    do
+    {
+        if (e >= 1 && e <= 150)
+        {
+            if (e <= 30)
+            {
+                cout << "1ra edad" << endl;
+            }
+            else
+            {
+                if (e <= 60)
+                {
+                    cout << "2da edad" << endl;
+                }
+                else
+                {
+                    if (e <= 90)
+                    {
+                        cout << "3ra edad" << endl;
+                    }
+                    else
+                    {
+                        cout << "Horas extra" << endl;
+                    }
+                }
+            }
+        }
+        else
+        {
+            cout << "Eres marciano" << endl;
+        }
+        cout << "Ingrese una edad o 00 para finalizar" << endl;
+        cin >> e;
+    }while (e != 00);
+    cout << "fin" << endl;
+    return 0;
+}
 ```
