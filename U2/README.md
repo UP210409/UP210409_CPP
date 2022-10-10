@@ -8,8 +8,13 @@
 * 05_Temperaturas
 * 06_Factura
 * 07_Convert
-* /Imagenes
-
+* /Imagenes  
+---
+### Class Excercises
+* E01abc
+* E02TablaPreg
+* E03TablaForFor
+* E04Tablas
 ---
 ## 01_Impuestos
 
@@ -357,6 +362,215 @@ int main()
 *Binary input , decimal output*  
 **Execution**  
 *Binary= 1010*  
-![Convert](/U2/Imagenes/Convert01.png ) 
+![Convert](/U2/Imagenes/Convert01.png )   
+*Binary= 00111001*  
+![Convert](/U2/Imagenes/Convert02.png ) 
 **Code**
 ```
+/*
+    Unidad 2 - ejercicio 7
+    Autor: María Delfina Deserti
+    Fecha: 09/10/2022
+    Descripción: se ingresa un número binario y se lo convierte a decimal
+*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    string bin;
+    int tam, sum=0;
+    cout<<"Ingrese el número binario a convertir"<<endl;
+    cin>>bin;
+    tam=bin.size();
+    for (int i = (tam-1); i >=0; i--)
+    {
+        if (bin[i]=='1')
+        {
+            sum=sum + pow(2,((tam-1)-i));
+        }
+    }
+    cout<<"El numero "<<bin<<" en decimal es: "<<sum<<endl;
+
+    return 0;
+}
+```
+---
+---
+# Class excercises codes  
+## E01abc
+
+```
+/*
+    Unidad 2 - Abecedario
+    Autor: María Delfina Deserti
+    Fecha: 23/09/2022
+    Descripción: Imprime el Abecedario con ascii
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char letra= 'A';
+    //Abecedario normal
+    for (int i = 0; i < 26; i++)
+    {
+        cout <<letra<< "\t";
+        letra=letra+1;
+    }
+    cout <<endl;
+    // minúsculas y mayúsculas
+    letra=letra+6;
+    for (int i = 0; i <26; i++)
+    {
+        cout <<letra << "\t";
+        letra= letra + 1;
+    }
+    cout <<endl;
+    // del 1 al 10
+    for (int i = 0; i < 10; i++)
+    {
+        cout<< i+1 <<"\t";
+    }
+    for (int j = 10; j > 0; j--)
+    {
+        cout<< j << "\t";
+    }
+
+    return 0;
+}
+```
+---
+## E02TablaPreg
+
+```
+/*
+    Unidad 2 - Tablas con pregunta
+    Autor: María Delfina Deserti
+    Fecha: 06/10/2022
+    Descripción: Muestra la tabla de multiplicar del numero ingresado cuantas veces quieras
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char op;
+    int n;
+    do
+    {
+        cout << "Ingrese un número" << endl;
+        cin >>n;
+        for (int i = 1; i <= 10; i++)
+        {
+            cout << n << " x " << i << " = " <<(i*n)<< endl;
+        }
+        cout << "¿Desea obtener otra tabla de multiplicar?" << endl << "Ingrese s para Si, n para NO"<<endl;
+        cin >>op;
+
+    } while (op=='s');
+    cout << "fin" << endl;
+    
+    return 0;
+}
+```
+---
+## E03TablaForFor
+
+```
+/*
+    Unidad 2 - Todas las tablas del 1 al 10 - For For
+    Autor: María Delfina Deserti
+    Fecha: 06/10/2022
+    Descripción: Muestra todas las tablas de multiplicar utilizando 2 for anidados
+*/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+    //TODAS LAS TABLAS DE 1 A 10
+    for (int i = 1; i <=10; i++)
+    {
+        cout << "Tabla del "<<i<<endl;
+        for (int j = 1; j <=10; j++)
+        {
+            cout << i << " x " << j << " = " <<(i*j)<< endl;
+        }
+        cout<<endl;
+    }
+}
+```
+---
+## E04Tablas
+
+```
+/*
+    Unidad 2 - Tablas
+    Autor: María Delfina Deserti
+    Fecha: 04/10/2022
+    Descripción: Muestra la tabla de multiplicar del numero ingresado
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Ingrese un número" << endl;
+    cin >>n;
+    
+    cout << "Tabla FOR ascendente" << endl;
+    for (int i = 1; i <= 10; i++)
+    {
+        cout << n << " x " << i << " = " <<(i*n)<< endl;
+    }
+
+    cout << endl << "Tabla FOR descendente" << endl;
+    for (int i = 10; i > 0; i--)
+    {
+        cout << n << " x " << i << " = " <<(i*n)<< endl;
+    }
+
+    cout << endl << "Tabla WHILE ascendente" << endl;
+    int i=1;
+    while ((i>=1) && (i<=10))
+    {
+        cout << n << " x " << i << " = " <<(i*n)<< endl;
+        i++;
+    }
+    i--;
+    cout << endl << "Tabla WHILE descendente" << endl;
+    while ((i<=10) && (i>=1))
+    {
+        cout << n << " x " << i << " = " <<(i*n)<< endl;
+        i--;
+    }
+    i++;
+    cout << endl << "Tabla DO WHILE ascendente" << endl;
+    do
+    {
+        cout << n << " x " << i << " = " <<(i*n)<< endl;
+        i++;
+
+    } while (i<=10);
+    i--;
+    cout << endl << "Tabla DO WHILE descendente" << endl;
+    do
+    {
+        cout << n << " x " << i << " = " <<(i*n)<< endl;
+        i--;
+
+    } while (i>=1);
+    
+    return 0;
+}
+```
+---
