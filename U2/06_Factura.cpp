@@ -2,7 +2,7 @@
     Unidad 2 - ejercicio 5
     Autor: María Delfina Deserti
     Fecha: 09/10/2022
-    Descripción: Se ingresan 6 temp. e indica el promedio, la minima y la máxima
+    Descripción: Se ingresa cantidad de productos y su precio y se calcula el total de todos
 */
 
 #include <iostream>

@@ -208,3 +208,155 @@ int main()
 ![Pizzeria](/U2/Imagenes/Pizzeria02.png )  
 **Code**
 ```
+/*
+    Unidad 2 - ejercicio 4
+    Autor: María Delfina Deserti
+    Fecha: 09/10/2022
+    Descripción: indica si la pizza es vegetariana o no y enlista los ingredientes
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char veg, op;
+    int ig;
+    do
+    {
+        cout << "Desea ordenar una pizza vegetariana? (y/n)" << endl;
+        cin >> veg;
+        if (veg == 'y')
+        {
+            cout << "Ingrese 1 o 2 segun el ingrediente que desee" << endl;
+            cout << "1) Tofu \n2) Pimientos" << endl;
+            cin >> ig;
+            switch (ig)
+            {
+            case 1:
+                cout << "Su pizza es vegetariana y lleva tomate, mozzarella y Tofu" << endl;
+                break;
+            case 2:
+                cout << "Su pizza es vegetariana y lleva tomate, mozzarella y Pimientos" << endl;
+                break;
+            default:
+                cout << "No ingreso un ingrediente valido" << endl;
+            }
+        }
+        else
+        {
+            cout << "Ingrese 1 ,2 o 3 segun el ingrediente que desee" << endl;
+            cout << "1) Peperoni \n2) Jamon\n3) Salmon" << endl;
+            cin >> ig;
+            switch (ig)
+            {
+            case 1:
+                cout << "Su pizza NO es vegetariana y lleva tomate, mozzarella y Peperoni" << endl;
+                break;
+            case 2:
+                cout << "Su pizza NO es vegetariana y lleva tomate, mozzarella y Jamon" << endl;
+                break;
+            case 3:
+                cout << "Su pizza NO es vegetariana y lleva tomate, mozzarella y Salmon" << endl;
+                break;
+            default:
+                cout << "No ingreso un ingrediente valido" << endl;
+                break;
+            }
+        }
+        cout << "Desea pedir otra pizza?(y/n)" << endl;
+        cin >> op;
+    } while (op == 'y');
+
+    return 0;
+}
+```  
+---
+## 05_Temperaturas
+
+*It indicates the highest and the lower temperature of 6 inputs*  
+**Execution**  
+*6 random temperatures*  
+![Pizzeria](/U2/Imagenes/Temperaturas.png ) 
+**Code**
+```
+/*
+    Unidad 2 - ejercicio 5
+    Autor: María Delfina Deserti
+    Fecha: 09/10/2022
+    Descripción: Se ingresan 6 temp. e indica el promedio, la minima y la máxima
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float t, sum=0, max=-100, min=100;
+    for (int i = 0; i < 6; i++)
+    {
+        cout<<"Ingrese la temperatura: "<<i+1<<endl;
+        cin>>t;
+        sum=sum+t;
+        if (min>t)
+        {
+            min=t;
+        }
+        if (max<t)
+        {
+            max=t;
+        }
+    }
+    cout<<"El promedio de las temperaturas es: "<<sum/6<<" ºC"<<endl;
+    cout<<"La temperatura minima es: "<<min<<" ºC"<<endl;
+    cout<<"La temperatura maxima es: "<<max<<" ºC"<<endl;
+    return 0;
+}
+```  
+---
+## 06_Factura
+
+*It calculates the total of different quantities of products and prices*  
+**Execution**  
+*Random products and prices*  
+![Factura](/U2/Imagenes/Factura.png ) 
+**Code**
+```
+/*
+    Unidad 2 - ejercicio 5
+    Autor: María Delfina Deserti
+    Fecha: 09/10/2022
+    Descripción: Se ingresa cantidad de productos y su precio y se calcula el total de todos
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int cant=0;
+    float p=0, sum=0;
+    do
+    {
+        cout<<"Ingrese la cantidad de productos"<<endl;
+        cin>>cant;
+        cout<<"Ingrese el precio del producto"<<endl;
+        cin>>p;
+        sum= sum + p*cant;
+    } while (cant!=0);
+    cout<<"Imprimiendo factura ..."<<endl;
+    cout<<"=============================="<<endl;
+    cout<<"El total a pagar es: $"<<sum<<endl;
+    
+    return 0;
+}
+```
+---
+## 07_Convert
+
+*Binary input , decimal output*  
+**Execution**  
+*Binary= 1010*  
+![Convert](/U2/Imagenes/Convert01.png ) 
+**Code**
+```
