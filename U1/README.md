@@ -2,8 +2,8 @@
 
 ![U1](/U1/Imagenes/U1.png "U1")  
 # Table of Contents  
-*Click the link of the code*
-- [Table of Contents](#table-of-contents)
+*Click the link of the code*  
+
   - [01 Hola](#01-hola)
   - [02 ParImpar](#02-parimpar)
   - [03 TiposDatos](#03-tiposdatos)
