@@ -1,16 +1,17 @@
 *UP210409*
 
-![U1](/U1/Imagenes/U1.png "U1")
-
-* 01_Hola
-* 02_ParImpar
-* 03_TiposDatos
-* 04_Ciclos
-* 05_Edades
-* /Imagenes
+![U1](/U1/Imagenes/U1.png "U1")  
+# Table of Contents  
+*Click the link of the code*
+- [Table of Contents](#table-of-contents)
+  - [01 Hola](#01-hola)
+  - [02 ParImpar](#02-parimpar)
+  - [03 TiposDatos](#03-tiposdatos)
+  - [04 Ciclos](#04-ciclos)
+  - [05 Edades](#05-edades)
 
 ---
-## 01_Hola
+## 01 Hola
 
 *This code show the word "Hello"*  
 
@@ -26,7 +27,7 @@ main(){
 ![Hola](/U1/Imagenes/Hola.png "Hola")
 
 ---
-## 02_ParImpar
+## 02 ParImpar
 
 *This code show the message "Par e Impar"*  
 
@@ -42,7 +43,7 @@ int main()
 ![ParImpar](/U1/Imagenes/ParImpar.png "ParImpar")  
 
 ---
-## 03_TiposDatos
+## 03 TiposDatos
 
 *It shows the different kind of datos in c++. You can appreciate the limits of storage of integer, float, double and char*  
 
@@ -86,7 +87,7 @@ int main()
 ![TipoDatos](/U1/Imagenes/TipoDatos.png "TipoDatos")
 
 ---
-## 04_Ciclos
+## 04 Ciclos
 
 *It adds even and odd numbers with if. We learnt how IF works*   
 
@@ -121,11 +122,11 @@ int main()
     return 0;
 }
 ```
-**Execution**
+**Execution**  
 ![Ciclos](/U1/Imagenes/Ciclos.png "Ciclos") 
 
 ---
-## 05_Edades
+## 05 Edades
 
 *It shows a messagge depending on the age you input. We learnt how to use IF correctly*  
 
