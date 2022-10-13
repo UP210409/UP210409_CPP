@@ -1,36 +1,26 @@
 *UP210409*
-![Unit2](/U2/Imagenes/U2.png ) 
-# Table of Contents
+![Unit2](/U2/Imagenes/U2.png )   
+# Table of Contents  
+*Click the link of the code*  
 
-* 01_Impuestos
-* 02_Rendimiento
-* 03_SalaDeJuegos
-* 04_Pizzeria
-* 05_Temperaturas
-* 06_Factura
-* 07_Convert
-* /Imagenes  
+  - [01 Impuestos](#01-impuestos)
+  - [02 Rendimiento](#02-rendimiento)
+  - [03 Sala de Juegos](#03-sala-de-juegos)
+  - [04 Pizzeria](#04-pizzeria)
+  - [05 Temperaturas](#05-temperaturas)
+  - [06 Factura](#06-factura)
+  - [07 Convert](#07-convert)
+  - /Imagenes  
 ---
 ### Class Excercises
-* E01abc
-* E02TablaPreg
-* E03TablaForFor
-* E04Tablas
+* [E01abc](#e01abc)
+* [E02TablaPreg](#e02tablapreg)
+* [E03TablaForFor](#e03tablaforfor)
+* [E04Tablas](#e04tablas)
 ---
-## 01_Impuestos
+## 01 Impuestos
 
 *It asks the user his anual rent and calculate the taxes he must pay*  
-**Execution**  
-*Rent <10000*  
-![Impuestos](/U2/Imagenes/Impuestos01.png )  
-*10000 < Rent < 20000*  
-![Impuestos](/U2/Imagenes/Impuestos02.png )  
-*20000 < Rent < 35000*  
-![Impuestos](/U2/Imagenes/Impuestos03.png )  
-*35000 < Rent < 60000*  
-![Impuestos](/U2/Imagenes/Impuestos04.png )  
-*60000 < Rent*  
-![Impuestos](/U2/Imagenes/Impuestos05.png )  
 
 **Code**
 ```
@@ -93,13 +83,23 @@ int main()
     return 0;
 }
 ```
+**Execution**  
+*Rent <10000*  
+![Impuestos](/U2/Imagenes/Impuestos01.png )  
+*10000 < Rent < 20000*  
+![Impuestos](/U2/Imagenes/Impuestos02.png )  
+*20000 < Rent < 35000*  
+![Impuestos](/U2/Imagenes/Impuestos03.png )  
+*35000 < Rent < 60000*  
+![Impuestos](/U2/Imagenes/Impuestos04.png )  
+*60000 < Rent*  
+![Impuestos](/U2/Imagenes/Impuestos05.png )  
+
 ---
-## 02_Rendimiento
+## 02 Rendimiento
 
 *workers evaluation - calculation of the salary dependind of their performance*  
-**Execution**  
-*All posibilities of evaluation with salary=14000*  
-![Rendimiento](/U2/Imagenes/Rendimiento.png )  
+
 **Code**
 ```
 /*
@@ -159,13 +159,15 @@ int main()
     return 0;
 }
 ```
+**Execution**  
+*All posibilities of evaluation with salary=14000*  
+![Rendimiento](/U2/Imagenes/Rendimiento.png )  
+
 ---
-## 03_SalaDeJuegos
+## 03 Sala De Juegos
 
 *It indicates the price of the ticket depending of the client age*  
-**Execution**  
-*All the possible client ages*  
-![SalaDeJuegos](/U2/Imagenes/SalasDeJuegos.png )  
+
 **Code**
 ```
 /*
@@ -203,15 +205,15 @@ int main()
     return 0;
 }
 ```
+**Execution**  
+*All the possible client ages*  
+![SalaDeJuegos](/U2/Imagenes/SalasDeJuegos.png )  
+
 ---
-## 04_Pizzeria
+## 04 Pizzeria
 
 *It indicates if the client order a vegetarian pizza or not and it makes a list of the ingredients*  
-**Execution**  
-*Order a vegetarian pizza*  
-![Pizzeria](/U2/Imagenes/Pizzeria01.png )  
-*Order a not vegetarian pizza*  
-![Pizzeria](/U2/Imagenes/Pizzeria02.png )  
+
 **Code**
 ```
 /*
@@ -277,13 +279,16 @@ int main()
     return 0;
 }
 ```  
+**Execution**  
+*Order a vegetarian pizza*  
+![Pizzeria](/U2/Imagenes/Pizzeria01.png )  
+*Order a not vegetarian pizza*  
+![Pizzeria](/U2/Imagenes/Pizzeria02.png )  
 ---
-## 05_Temperaturas
+## 05 Temperaturas
 
 *It indicates the highest and the lower temperature of 6 inputs*  
-**Execution**  
-*6 random temperatures*  
-![Pizzeria](/U2/Imagenes/Temperaturas.png ) 
+
 **Code**
 ```
 /*
@@ -319,13 +324,15 @@ int main()
     return 0;
 }
 ```  
+**Execution**  
+*6 random temperatures*  
+![Pizzeria](/U2/Imagenes/Temperaturas.png ) 
+
 ---
-## 06_Factura
+## 06 Factura
 
 *It calculates the total of different quantities of products and prices*  
-**Execution**  
-*Random products and prices*  
-![Factura](/U2/Imagenes/Factura.png ) 
+ 
 **Code**
 ```
 /*
@@ -357,15 +364,15 @@ int main()
     return 0;
 }
 ```
+**Execution**  
+*Random products and prices*  
+![Factura](/U2/Imagenes/Factura.png )
+
 ---
-## 07_Convert
+## 07 Convert
 
 *Binary input , decimal output*  
-**Execution**  
-*Binary= 1010*  
-![Convert](/U2/Imagenes/Convert01.png )   
-*Binary= 00111001*  
-![Convert](/U2/Imagenes/Convert02.png ) 
+
 **Code**
 ```
 /*
@@ -398,6 +405,12 @@ int main()
     return 0;
 }
 ```
+**Execution**  
+*Binary= 1010*  
+![Convert](/U2/Imagenes/Convert01.png )   
+*Binary= 00111001*  
+![Convert](/U2/Imagenes/Convert02.png ) 
+
 ---
 ---
 # Class excercises codes  
