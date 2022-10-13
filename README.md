@@ -1,12 +1,14 @@
 # UP210409_CPP
-Crear Repositorio desde github  
-**Delfina Deserti**  
-# C++ programming course
+
+![Encabezado](/U1/Imagenes/Unidad.png)
+
+![esqueleto](/U1/Imagenes/Esqueleto.jpg)
+## Programming course
 
 <div align ="center">
 </div>
 
-## Main structure
+
 <table class="tg">
 <thead>
   <tr>
@@ -61,101 +63,28 @@ Crear Repositorio desde github
 </tbody>
 </table>
 
+![teclado](/U1/Imagenes/Teclas.gif "OnFire")
+<center>
 
-*Viva Messi*
-![Messi](/U1/Pics/messi.jpeg "Messi pasion")
+## GitHub Commands
 
-<div align="center">
-<img alt="git hub" src='U1/Pics/githubfoto.png'
-width='400'     />
-</div>
+| Most commonly used | |
+| --------- | ------ |
+| git status |    |
+| git add .|    |
+| git commit -m"message"|   |
+| **git push**|    |
+| git clone<>|    |
+| **git pull**|    |
+| git merge|    |
+| git config --global user.name "name"|    |
+| git config --global user.email xxx@gmail.com |    |
+| git init|    |
 
-<center>Hola  
-
-Bienvenido a Programación
-# h1 línea de encabezado  
-## h2 linea de encabezado
-### h3 linea de encabezado  
-**Texto en negrita**  
-__Texto en negritas de otra forma__ 
 </center>
 
-*Texto en cursiva*  
-> Cita de elementos
----
-
-___
-
-1. Leer
-1. Escribir
-1. Ejecutar
-***
-<ol>
-<li>Read</li>
-<li>Write</li>
-<li>Execute</li>
-</ol>  
-
-***
-* Hola
-* Chau
-
-```
-int main()
-{
-    int e = 0;
-    cout << "Ingrese una edad" << endl;
-    cin >> e;
-    do
-    {
-        if (e >= 1 && e <= 150)
-        {
-            if (e <= 30)
-            {
-                cout << "1ra edad" << endl;
-            }
-            else
-            {
-                if (e <= 60)
-                {
-                    cout << "2da edad" << endl;
-                }
-                else
-                {
-                    if (e <= 90)
-                    {
-                        cout << "3ra edad" << endl;
-                    }
-                    else
-                    {
-                        cout << "Horas extra" << endl;
-                    }
-                }
-            }
-        }
-        else
-        {
-            cout << "Eres marciano" << endl;
-        }
-        cout << "Ingrese una edad o 00 para finalizar" << endl;
-        cin >> e;
-    }while (e != 00);
-    cout << "fin" << endl;
-    return 0;
-}
-
-```
-
-## Tabla
-| Color | Código |
-| --------- | ------ |
-| Rojo | 23947102 |
-| verde | sdhfasludhgahsfp |
-
-`https://github.com`  
-https://github.com
-> [GitHub](https://github.com)
-
-<https://github.com>  
-"optional title here"  
-<a href="https://github.com">https://github.com</a>
+## Recomendations
+* Always remember to debug when you have code problems
+* If your code is messy: > right click > Format document
+* If there is some documents, folders or extentions you don't want to upload on GitHub, add them to .gitignore
+* In your codes, try not to ask again the same question if you already found the answear

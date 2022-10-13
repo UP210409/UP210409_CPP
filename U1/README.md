@@ -1,5 +1,6 @@
-*Delfina Deserti*
-# UNIDAD 1 
+*UP210409*
+
+![U1](/U1/Imagenes/U1.png "U1")
 
 * 01_Hola
 * 02_ParImpar
@@ -11,9 +12,7 @@
 ---
 ## 01_Hola
 
-*This exercise show the word "Hello"*  
-**Execution**
-![Hola](/U1/Imagenes/Hola.png "Hola")
+*This code show the word "Hello"*  
 
 **Code**
 ```
@@ -23,12 +22,13 @@ main(){
 	return(0);
 }
 ```
+**Execution**  
+![Hola](/U1/Imagenes/Hola.png "Hola")
+
 ---
 ## 02_ParImpar
 
-*This exercise show the message "Par e Impar"*  
-**Execution**
-![ParImpar](/U1/Imagenes/ParImpar.png "ParImpar")
+*This code show the message "Par e Impar"*  
 
 **Code**
 ```
@@ -38,12 +38,13 @@ int main()
     return 0;
 }
 ```
+**Execution**  
+![ParImpar](/U1/Imagenes/ParImpar.png "ParImpar")  
+
 ---
 ## 03_TiposDatos
 
-*Muestra los diferentes tipos de datos en c++*  
-**Execution**
-![TipoDatos](/U1/Imagenes/TipoDatos.png "TipoDatos")
+*It shows the different kind of datos in c++. You can appreciate the limits of storage of integer, float, double and char*  
 
 **Code**
 ```
@@ -81,12 +82,13 @@ int main()
     return 0;
 }
 ```
+**Execution**  
+![TipoDatos](/U1/Imagenes/TipoDatos.png "TipoDatos")
+
 ---
 ## 04_Ciclos
 
-*It adds even and odd numbers with if*  
-**Execution**
-![Ciclos](/U1/Imagenes/Ciclos.png "Ciclos")
+*It adds even and odd numbers with if. We learnt how IF works*   
 
 **Code**
 ```
@@ -119,12 +121,13 @@ int main()
     return 0;
 }
 ```
+**Execution**
+![Ciclos](/U1/Imagenes/Ciclos.png "Ciclos") 
+
 ---
 ## 05_Edades
 
-*It shows a messagge depending on the age you input*  
-**Execution with all the possible options**
-![Ciclos](/U1/Imagenes/Edades.png "Ciclos")
+*It shows a messagge depending on the age you input. We learnt how to use IF correctly*  
 
 **Code**
 ```
@@ -181,3 +184,5 @@ int main()
     return 0;
 }
 ```
+**Execution with all the possible options 15, 35, 62, 95 y 160**
+![Ciclos](/U1/Imagenes/Edades.png "Ciclos")
