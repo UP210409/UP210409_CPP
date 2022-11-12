@@ -24,8 +24,5 @@ int main()
         }
     }
     cout<<"El numero "<<bin<<" en decimal es: "<<sum<<endl;
-
-    
-
     return 0;
 }
