@@ -71,9 +71,9 @@ void ProdNuevos(float mat[F][C], string sabor[F])
     }
 }
 
-void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborvend[F], int &cantven)
+void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborvend[F][C], int &cantven, char tipo) //pasar el tipo de producto para guardarla en la matris sabor
 {
-    char possab;
+    int possab;
     Imprimir(mat, sabor);
     cout<<"Ingrese la posicion del sabor que desea vender."<<endl;
     cin>>possab;
@@ -81,23 +81,27 @@ void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborven
     if (possab >= 0 && possab <= F)
     {
         int cantArt;
-        cout << "¿Cuantos productos del sabor" << sabor[possab] << " desea vender?" << endl;
+        cout << "¿Cuantos productos del sabor " << sabor[possab] << " desea vender?" << endl;
         cin >> cantArt;
         if (mat[possab][0] >= cantArt)
         {
+            //arreglar matriz sabor para el tipo de producto
             cantven++;
-            saborvend[cantven]= sabor[possab];
+            saborvend[cantven][0]= sabor[possab];
+            saborvend[cantven][1]= tipo;
             mat[possab][0] = mat[possab][0] - cantven;
             Ventas[cantven][0]= cantArt;
-            Ventas[cantven][1]= mat[possab][1];
+            Ventas[cantven][1]= mat[possab][1]*cantArt;
         }else
         {
             cout<<"No se puede realizar la venta, no hay productos suficientes del sabor "<<sabor[possab]<<endl;
+            //volver a preguntar
         }
     }
     else
     {
         cout << "Ingresó un valor erroneo de posicion" << endl;
+        //volver a preguntar
     }
 }
 
@@ -169,7 +173,7 @@ int main()
     }
     //inicialización de ventas
     float ventas[F][C]; //cantidad de artículos vendidos - total de la venta
-    string saborvend[F];
+    string saborvend[F][C];
     int cantven=0;
     // MENU
     do
@@ -227,16 +231,16 @@ int main()
                 switch (tipoven)
                 {
                 case '1':
-                    Venta(matpas, saborpas, ventas, saborvend, cantven);
+                    Venta(matpas, saborpas, ventas, saborvend, cantven, tipoven);
                     break;
                 case '2':
-                    Venta(matpos, saborpos, ventas, saborvend, cantven);
+                    Venta(matpos, saborpos, ventas, saborvend, cantven, tipoven);
                     break;
                 case '3':
-                    Venta(matpan, saborpan, ventas, saborvend, cantven);
+                    Venta(matpan, saborpan, ventas, saborvend, cantven, tipoven);
                     break;
                 case '4':
-                    Venta(matgalle, saborgalle, ventas, saborvend, cantven);
+                    Venta(matgalle, saborgalle, ventas, saborvend, cantven, tipoven);
                     break;
                 case '0':
                     cout<<"Guardando los cambios . . ."<<endl;
@@ -251,8 +255,8 @@ int main()
             break;
 
         case 'd': // IMPRIMIR VENTAS REALIZADAS
-            cout<<"Las ventas realizadas hasta ahora son las siguientes: "<<endl;
-            Imprimir(ventas, saborvend);
+            //cout<<"Las ventas realizadas hasta ahora son las siguientes: "<<endl;
+            //Imprimir(ventas, saborvend);
 
             break;
 
