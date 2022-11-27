@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
+#include <string.h>
 //#include <stdafx.h>
 using namespace std;
 #define F 6
@@ -9,14 +10,16 @@ using namespace std;
 // - - - - - - - - I M P R I M I R - - - - - - - -
 void Imprimir(float mat[F][C], string sabor[F])
 {
-    for (int i = 0; i<=2 /*sabor[i] != ?????*/; i++)
+    int n = 0;
+    while (!sabor[n].empty() && n <= F)
     {
         int c = 0;
-        cout << i << ") ";
-        cout << mat[i][c] << "   ";
+        cout << n << ") ";
+        cout << mat[n][c] << "   ";
         c++;
-        cout << mat[i][c] << "   ";
-        cout << sabor[i] << endl;
+        cout << mat[n][c] << "   ";
+        cout << sabor[n] << endl;
+        n++;
     }
 }
 
@@ -57,26 +60,64 @@ void AddSabExistente(float mat[F][C], string sabor[F])
 // PRODUCTOS NUEVOS
 void ProdNuevos(float mat[F][C], string sabor[F])
 {
-    char newsab;
+    char op;
+    string newsab;
     Imprimir(mat, sabor);
     cout << "Si desea agregar un sabor nuevo ingrese Y, si quiere agregar stock a un sabor existente ingrese n. (y/n)" << endl;
-    cin >> newsab;
-    if (newsab == ('y' || 'Y'))
+    cin >> op;
+    if (op == 'y' || op == 'Y')
     {
-        // Parte de Izhak
+        do
+        {
+            bool flag = true;
+            cout << "Ingrese el nuevo sabor" << endl;
+            cin >> newsab;
+            int n = 0;
+            while (flag && n <= F)
+            {
+                if (sabor[n].empty())
+                {
+                    flag = false;
+                    int newcan, newpre;
+                    sabor[n] = newsab;
+                    cout << "Cuantos productos desea agregar de " << newsab << " ?" << endl;
+                    cin >> newcan;
+                    mat[n][0] = newcan;
+                    cout << "Ingrese el precio de " << newsab << endl;
+                    cin >> newpre;
+                    mat[n][1] = newpre;
+                }
+                else
+                {
+                    n++;
+                    if (n > F)
+                    {
+                        cout << "Ya no puede ingresar un nuevo sabor, la cantidad supero su limite" << endl;
+                    }
+                }
+            }
+
+            cout << "Desea ingresar otro nuevo sabor? y/n" << endl;
+            cin >> newsab;
+        } while (newsab == "y");
     }
     else
     {
+        do
+        {
         AddSabExistente(mat, sabor);
+        cout << "Desea actualizar otra cantidad? y/n" << endl;
+        cin >> newsab;
+        } while (newsab=="y");
     }
 }
 
-void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborvend[F][C], int &cantven, char tipo) //pasar el tipo de producto para guardarla en la matris sabor
+void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborvend[F][C], int &cantven, char tipo) // pasar el tipo de producto para guardarla en la matris sabor
 {
     int possab;
     Imprimir(mat, sabor);
-    cout<<"Ingrese la posicion del sabor que desea vender."<<endl;
-    cin>>possab;
+    cout << "Ingrese la posicion del sabor que desea vender." << endl;
+    cin >> possab;
 
     if (possab >= 0 && possab <= F)
     {
@@ -85,23 +126,24 @@ void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborven
         cin >> cantArt;
         if (mat[possab][0] >= cantArt)
         {
-            //arreglar matriz sabor para el tipo de producto
+            // arreglar matriz sabor para el tipo de producto
             cantven++;
-            saborvend[cantven][0]= sabor[possab];
-            saborvend[cantven][1]= tipo;
+            saborvend[cantven][0] = sabor[possab];
+            saborvend[cantven][1] = tipo;
             mat[possab][0] = mat[possab][0] - cantven;
-            Ventas[cantven][0]= cantArt;
-            Ventas[cantven][1]= mat[possab][1]*cantArt;
-        }else
+            Ventas[cantven][0] = cantArt;
+            Ventas[cantven][1] = mat[possab][1] * cantArt;
+        }
+        else
         {
-            cout<<"No se puede realizar la venta, no hay productos suficientes del sabor "<<sabor[possab]<<endl;
-            //volver a preguntar
+            cout << "No se puede realizar la venta, no hay productos suficientes del sabor " << sabor[possab] << endl;
+            // volver a preguntar
         }
     }
     else
     {
         cout << "Ingresó un valor erroneo de posicion" << endl;
-        //volver a preguntar
+        // volver a preguntar
     }
 }
 
@@ -171,10 +213,10 @@ int main()
         f++;
         c--;
     }
-    //inicialización de ventas
-    float ventas[F][C]; //cantidad de artículos vendidos - total de la venta
+    // inicialización de ventas
+    float ventas[F][C]; // cantidad de artículos vendidos - total de la venta
     string saborvend[F][C];
-    int cantven=0;
+    int cantven = 0;
     // MENU
     do
     {
@@ -213,7 +255,7 @@ int main()
                     ProdNuevos(matgalle, saborgalle);
                     break;
                 case '0':
-                    cout<<"Guardando los cambios . . ."<<endl;
+                    cout << "Guardando los cambios . . ." << endl;
                     sleep(4);
                     break;
                 default:
@@ -243,10 +285,10 @@ int main()
                     Venta(matgalle, saborgalle, ventas, saborvend, cantven, tipoven);
                     break;
                 case '0':
-                    cout<<"Guardando los cambios . . ."<<endl;
+                    cout << "Guardando los cambios . . ." << endl;
                     sleep(4);
-                    //cout<< "Se ha vendido lo siguiente: "<<endl;
-                    //Imprimir(ventas, saborvend);
+                    // cout<< "Se ha vendido lo siguiente: "<<endl;
+                    // Imprimir(ventas, saborvend);
                     break;
                 default:
                     break;
@@ -255,8 +297,8 @@ int main()
             break;
 
         case 'd': // IMPRIMIR VENTAS REALIZADAS
-            //cout<<"Las ventas realizadas hasta ahora son las siguientes: "<<endl;
-            //Imprimir(ventas, saborvend);
+            // cout<<"Las ventas realizadas hasta ahora son las siguientes: "<<endl;
+            // Imprimir(ventas, saborvend);
 
             break;
 
