@@ -104,12 +104,20 @@ void ProdNuevos(float mat[F][C], string sabor[F])
     }
     else
     {
-        do
+        if (op == 'n' || op == 'N')
         {
-            AddSabExistente(mat, sabor);
-            cout << "Desea actualizar otra cantidad? y/n" << endl;
-            cin >> newsab;
-        } while (newsab == "y");
+            do
+            {
+                AddSabExistente(mat, sabor);
+                cout << "Desea actualizar otra cantidad? y/n" << endl;
+                cin >> newsab;
+            } while (newsab == "y");
+        }
+        else
+        {
+            cout<<"Comando invalido"<<endl;
+        }
+        
     }
 }
 
@@ -129,19 +137,6 @@ void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborven
         if (mat[possab][0] >= cantArt)
         {
             cantven++;
-            /*switch (tipo)
-                {
-                case "1":
-                    cout<<"Pasteles"<<endl;
-                    break;
-                case "2":
-                    cout<<"Postres"<<endl;
-                    break;
-                case
-                default:
-                    break;
-                }
-            */
             saborvend[cantven - 1][0] = sabor[possab];
             saborvend[cantven - 1][1] = tipo;
             mat[possab][0] = mat[possab][0] - cantArt;
@@ -158,21 +153,6 @@ void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborven
         cout << "Ingresó un valor erroneo de posicion" << endl;
     }
 }
-
-/*float IngTotal(float ventas[F][C], int n)
-{
-    if (ventas[n][0]!= '/0')
-    {
-        return (ventas[n][0] + IngTotal(ventas[F][C], n+1));
-    }
-    else
-    {
-        return 0;
-    }
-
-
-}
-*/
 
 //  . . . . . . . M A I N . . . . . . . . .
 int main()
@@ -330,72 +310,84 @@ int main()
 
         case 'd': // IMPRIMIR VENTAS REALIZADAS
         {
-            cout << "Las ventas realizadas hasta ahora son las siguientes: " << endl;
-            int n = 0;
-            cout << "   Tipo   -     Sabor     -   Cantidad  - Ingreso  " << endl;
-            while (!saborvend[n][0].empty() && n <= F)
+            if (cantven == 0)
             {
-                int c = 0;
-                cout << n << ") ";
-                cout << saborvend[n][1] << "   ";
-                cout << saborvend[n][0] << "   ";
-                cout << ventas[n][c] << "   $ ";
-                c++;
-                cout << ventas[n][c] << "   " << endl;
-                n++;
+                cout << "No se han realizado ventas" << endl;
             }
-            // Buscar el total de dinero en las ventas y cantidad de artículos vendidos en total
-            // Izhak
-            // cout<<"El ingreso fue de "<< IngTotal(ventas[F][C], 0)<<endl;;
+            else
+            {
+                cout << "Las ventas realizadas hasta ahora son las siguientes: " << endl;
+                int n = 0;
+                cout << "   Tipo   -     Sabor     -   Cantidad  - Ingreso  " << endl;
+                while (!saborvend[n][0].empty() && n <= F)
+                {
+                    int c = 0;
+                    cout << n << ") ";
+                    cout << saborvend[n][1] << "   ";
+                    cout << saborvend[n][0] << "   ";
+                    cout << ventas[n][c] << "   $ ";
+                    c++;
+                    cout << ventas[n][c] << "   " << endl;
+                    n++;
+                }
+            }
         }
         break;
         case 'e': // SALIR Y GUARDAR ARCHIVOS
             cout << "Guardando los cambios . . ." << endl;
             // CARGAR INVENTARIO DE PASTELES
             int f = 0, c = 0;
-            // pasteles.open("/home/delfi/UP210409_CPP/Pasteles.txt", ios::out);
+            ofstream pasteles;
+            pasteles.open("/home/delfi/UP210409_CPP/Pasteles.txt", ios::out);
+
             while (!saborpas[f].empty() && f <= F)
             {
-                pasteles << saborpas[f];
-                pasteles << matpas[f][c]; // cantidad
+                pasteles << saborpas[f] << " ";
+                pasteles << matpas[f][c] << " "; // cantidad
                 c++;
-                pasteles << matpas[f][c]; // precio
+                pasteles << matpas[f][c] << endl; // precio
                 f++;
                 c--;
             }
             f = 0;
             c = 0;
             // CARGAR INVENTARIO DE POSTRES
+            ofstream postres;
+            postres.open("/home/delfi/UP210409_CPP/Postres.txt", ios::out);
             while (!saborpos[f].empty() && f <= F)
             {
-                postres >> saborpos[f];
-                postres >> matpos[f][c]; // cantidad
+                postres << saborpos[f] << " ";
+                postres << matpos[f][c] << " "; // cantidad
                 c++;
-                postres >> matpos[f][c]; // precio
+                postres << matpos[f][c] << endl; // precio
                 f++;
                 c--;
             }
             f = 0;
             c = 0;
             // CARGAR INVENTARIO DE PANES
+            ofstream panes;
+            panes.open("/home/delfi/UP210409_CPP/Panes.txt", ios::out);
             while (!saborpan[f].empty() && f <= F)
             {
-                panes >> saborpan[f];
-                panes >> matpan[f][c]; // cantidad
+                panes << saborpan[f] << " ";
+                panes << matpan[f][c] << " "; // cantidad
                 c++;
-                panes >> matpan[f][c]; // precio
+                panes << matpan[f][c] << endl; // precio
                 f++;
                 c--;
             }
             f = 0;
             c = 0;
             // CARGAR INVENTARIO DE GALLETAS
+            ofstream galletas;
+            galletas.open("/home/delfi/UP210409_CPP/Galletas.txt", ios::out);
             while (!saborgalle[f].empty() && f <= F)
             {
-                galletas >> saborgalle[f];
-                galletas >> matgalle[f][c]; // cantidad
+                galletas << saborgalle[f] << " ";
+                galletas << matgalle[f][c] << " "; // cantidad
                 c++;
-                galletas >> matgalle[f][c]; // precio
+                galletas << matgalle[f][c] << endl; // precio
                 f++;
                 c--;
             }
@@ -405,12 +397,12 @@ int main()
             postres.close();
             panes.close();
             galletas.close();
-            exit;
+            exit(1);
             break;
-       // default:
-        //    break;
+            //default:
+            //    cout << "No ingreso un caracter correspondiente al menu" << endl;
+            //    break;
         }
-
     } while (menu != 'E' || menu != 'e');
 
     system("pause");
