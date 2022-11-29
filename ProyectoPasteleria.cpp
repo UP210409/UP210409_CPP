@@ -15,7 +15,7 @@ void Imprimir(float mat[F][C], string sabor[F])
     {
         int c = 0;
         cout << n << ") ";
-        cout << mat[n][c] << "   ";
+        cout << mat[n][c] << "   $ ";
         c++;
         cout << mat[n][c] << "   ";
         cout << sabor[n] << endl;
@@ -105,16 +105,17 @@ void ProdNuevos(float mat[F][C], string sabor[F])
     {
         do
         {
-        AddSabExistente(mat, sabor);
-        cout << "Desea actualizar otra cantidad? y/n" << endl;
-        cin >> newsab;
-        } while (newsab=="y");
+            AddSabExistente(mat, sabor);
+            cout << "Desea actualizar otra cantidad? y/n" << endl;
+            cin >> newsab;
+        } while (newsab == "y");
     }
 }
 
-void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborvend[F][C], int &cantven, char tipo) // pasar el tipo de producto para guardarla en la matris sabor
+void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborvend[F][C], int &cantven, string tipo) // pasar el tipo de producto para guardarla en la matriz sabor
 {
     int possab;
+    char op;
     Imprimir(mat, sabor);
     cout << "Ingrese la posicion del sabor que desea vender." << endl;
     cin >> possab;
@@ -126,25 +127,40 @@ void Venta(float mat[F][C], string sabor[F], float Ventas[F][C], string saborven
         cin >> cantArt;
         if (mat[possab][0] >= cantArt)
         {
-            // arreglar matriz sabor para el tipo de producto
             cantven++;
-            saborvend[cantven][0] = sabor[possab];
-            saborvend[cantven][1] = tipo;
-            mat[possab][0] = mat[possab][0] - cantven;
-            Ventas[cantven][0] = cantArt;
-            Ventas[cantven][1] = mat[possab][1] * cantArt;
+            /*switch (tipo)
+                {
+                case "1":
+                    cout<<"Pasteles"<<endl;
+                    break;
+                case "2":
+                    cout<<"Postres"<<endl;
+                    break;
+                case
+                default:
+                    break;
+                }
+            */
+            saborvend[cantven-1][0] = sabor[possab];
+            saborvend[cantven-1][1] = tipo;
+            mat[possab][0] = mat[possab][0] - cantArt;
+            Ventas[cantven-1][0] = cantArt;
+            Ventas[cantven-1][1] = mat[possab][1] * cantArt;
         }
         else
         {
             cout << "No se puede realizar la venta, no hay productos suficientes del sabor " << sabor[possab] << endl;
-            // volver a preguntar
         }
     }
     else
     {
         cout << "Ingresó un valor erroneo de posicion" << endl;
-        // volver a preguntar
     }
+}
+
+void IngTotal(float ventas[F][C], )
+{
+    
 }
 
 //  . . . . . . . M A I N . . . . . . . . .
@@ -214,8 +230,8 @@ int main()
         c--;
     }
     // inicialización de ventas
-    float ventas[F][C]; // cantidad de artículos vendidos - total de la venta
-    string saborvend[F][C];
+    float ventas[F][C];     // cantidad de artículos vendidos - total de la venta
+    string saborvend[F][C]; // sabor y tipo
     int cantven = 0;
     // MENU
     do
@@ -268,46 +284,56 @@ int main()
             do
             {
                 cout << "¿Que producto desea vender? Ingrese el numero correspondiente" << endl;
-                cout << "1) Pastel \n2) Postre \n3) Panes \n4) Galletas \n0) Ingrese 0 para finalizar" << endl;
+                cout << "1) Pastel \n2) Postre \n3) Panes \n4) Galletas \n"
+                     << endl;
                 cin >> tipoven;
                 switch (tipoven)
                 {
                 case '1':
-                    Venta(matpas, saborpas, ventas, saborvend, cantven, tipoven);
+                    Venta(matpas, saborpas, ventas, saborvend, cantven, "pasteles");
                     break;
                 case '2':
-                    Venta(matpos, saborpos, ventas, saborvend, cantven, tipoven);
+                    Venta(matpos, saborpos, ventas, saborvend, cantven, "Postre");
                     break;
                 case '3':
-                    Venta(matpan, saborpan, ventas, saborvend, cantven, tipoven);
+                    Venta(matpan, saborpan, ventas, saborvend, cantven, "Panes");
                     break;
                 case '4':
-                    Venta(matgalle, saborgalle, ventas, saborvend, cantven, tipoven);
-                    break;
-                case '0':
-                    cout << "Guardando los cambios . . ." << endl;
-                    sleep(4);
-                    // cout<< "Se ha vendido lo siguiente: "<<endl;
-                    // Imprimir(ventas, saborvend);
+                    Venta(matgalle, saborgalle, ventas, saborvend, cantven, "Galletas");
                     break;
                 default:
                     break;
                 }
-            } while (tipoprod == '0');
+                cout << "Desea realizar otra venta? y/n" << endl;
+                cin >> tipoven;
+
+            } while (tipoven == 'y' || tipoven == 'Y');
             break;
 
         case 'd': // IMPRIMIR VENTAS REALIZADAS
-            // cout<<"Las ventas realizadas hasta ahora son las siguientes: "<<endl;
-            // Imprimir(ventas, saborvend);
-
+        {
+            cout << "Las ventas realizadas hasta ahora son las siguientes: " << endl;
+            int n = 0;
+            cout<< "   Tipo   -     Sabor     -   Cantidad  - Ingreso  "<<endl;
+            while (!saborvend[n][0].empty() && n <= F)
+            {
+                int c = 0;
+                cout << n << ") ";
+                cout << saborvend[n][1] << "   ";
+                cout << saborvend[n][0] << "   ";
+                cout << ventas[n][c] << "   $ ";
+                c++;
+                cout << ventas[n][c] << "   "<<endl;
+                n++;
+            }
+            IngTotal(Ventas[F][C]);
+        }
             break;
-
-        case 'e': // SALIR Y GUARDAR ARCHIVOS
-            cout << "E" << endl;
-            break;
-
-        default:
-            break;
+        //case 'e': // SALIR Y GUARDAR ARCHIVOS
+            // cout << "E" << endl;
+         //   break;
+       // default:
+        //    break;
         }
 
     } while (menu != ('E' || 'e'));
