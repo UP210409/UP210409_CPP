@@ -1,4 +1,4 @@
-avena 20 6
+avena 1 6
 ManzanaCanela 10 8
 Chocolate 25 6
 naranja 10 12

@@ -1,3 +1,4 @@
 chocolate 5 20
 vainilla 10 14
 FrutillasConCrema 5 18
+fresa 4 20

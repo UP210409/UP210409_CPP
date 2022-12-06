@@ -1,3 +1,0 @@
-frutilla 5 55.5
-banana 3 50
-durazno 2 60.5
